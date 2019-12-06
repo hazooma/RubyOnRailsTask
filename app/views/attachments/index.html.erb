@@ -1,0 +1,45 @@
+<% if user_signed_in? %>
+  <li class='nav-item'><%= link_to 'Edit account', edit_user_registration_path %></li>
+  <li class='nav-item'><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+<% else %>
+  <li class='nav-item'><%= link_to 'Sign in', new_user_session_path %></li>
+  <li class='nav-item'><%= link_to 'Sign up', new_user_registration_path %></li>
+<% end %>
+
+
+<div class="container">   
+<% if !flash[:notice].blank? %>   
+   <div>   
+      <%= flash[:notice] %>   
+   </div>   
+<% end %>   
+  
+<br>   
+  
+<%= link_to "New Attachment", attachments_new_path %>   
+<br>   
+<br>   
+  
+<table border="3">   
+   <thead>   
+      <tr>   
+         <th>File Name</th>   
+         <th>Download Link</th>   
+         <th>Action</th>   
+      </tr>   
+   </thead>   
+      
+   <tbody>   
+      <% @attachments.each do |attachment| %>   
+            
+         <tr>   
+            <td><%= attachment.name %></td>   
+            <td><%= link_to "Download", attachment.attachment_url %></td>   
+            <td><%= link_to "Delete", attachment_path(attachment), method: :delete, confirm: "Are you sure you want to delete #{attachment.name}?" %></td>   
+         </tr>   
+            
+      <% end %>   
+   </tbody>   
+      
+</table>   
+</div>  
