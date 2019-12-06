@@ -23,7 +23,7 @@ Feathures Satisfied
 
 To Run the Code 
 
-- `git clone `
+- `git clone https://github.com/hazooma/RubyOnRailsTask.git`
 - `bundle`
 - `rails db:migrate`
 - `rails s`
