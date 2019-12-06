@@ -20,3 +20,10 @@ Feathures Satisfied
 - Uploads can be downloaded
 - User registration
 - change their own passwords
+
+To Run the Code 
+
+- `git clone `
+- `bundle`
+- `rails db:migrate`
+- `rails s`
